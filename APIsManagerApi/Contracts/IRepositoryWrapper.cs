@@ -9,7 +9,7 @@ namespace Contracts
     public interface IRepositoryWrapper
     {
         IUserRepository User { get; }
-//ILogin login { get; }
+        ITwitterRepository Twitter { get; }
         void Save();
     }
 }

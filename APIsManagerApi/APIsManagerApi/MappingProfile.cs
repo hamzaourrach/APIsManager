@@ -11,6 +11,7 @@ namespace APIsManagerApi
             CreateMap<User, UserDto>();
             CreateMap<UserForCreationDto, User>();
             CreateMap<UserForUpdateDto, User>();
+            CreateMap<TwitterCredentialDto, TwitterCredential>();
             //CreateMap<LoginDto, User>();
         }
     }
