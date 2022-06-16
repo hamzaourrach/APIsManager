@@ -1,0 +1,8 @@
+<ng-template [ngIf]="isUserAuthenticated()"  [ngIfElse]="login">
+      <app-home></app-home>
+</ng-template>
+
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>
+
