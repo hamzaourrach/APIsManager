@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from './guards/auth.guard';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
+import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -29,14 +31,16 @@ export function tokenGetter() {
     NotFoundComponent,
     InternalServerComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderNavbarComponent,
+    LeftNavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CollapseModule.forRoot(),
     UserModule,
     FormsModule,
     JwtModule.forRoot({
