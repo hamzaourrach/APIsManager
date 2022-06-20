@@ -18,6 +18,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
 import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TwitterSettingsComponent } from './twitter/twitter-settings/twitter-settings.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -34,7 +35,8 @@ export function tokenGetter() {
     SignUpComponent,
     HeaderNavbarComponent,
     LeftNavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    TwitterSettingsComponent
   ],
   imports: [
     BrowserModule,

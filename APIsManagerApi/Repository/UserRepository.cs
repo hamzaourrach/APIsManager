@@ -54,5 +54,11 @@ namespace Repository
 
             return false;
         }
+
+        public string GetUserIdByEmail(string email)
+        {
+            var userExist = FindByCondition(user => user.Email == email).FirstOrDefault();
+            return userExist.Id.ToString();
+        }
     }
 }

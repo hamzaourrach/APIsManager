@@ -9,5 +9,7 @@ namespace Entities.Models
     public class AuthenticatedResponse
     {
         public string Token { get; set; }
+
+        public string IdUser { get; set; }
     }
 }

@@ -35,8 +35,10 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response: AuthenticatedResponse) => {
           const token = response.token;
-          console.log(token);
+          const idUser = response.idUser;
+          console.log(response.idUser);
           localStorage.setItem("jwt", token);
+          localStorage.setItem("userid", idUser);
           this.invalidLogin = false;
           this.router.navigate(["/"]);
         },

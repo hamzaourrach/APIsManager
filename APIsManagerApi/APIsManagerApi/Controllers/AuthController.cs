@@ -45,11 +45,16 @@ namespace APIsManagerApi.Controllers
                         issuer: "https://localhost:5001",
                         audience: "https://localhost:5001",
                         claims: new List<Claim>(),
-                        expires: DateTime.Now.AddMinutes(5),
+                        expires: DateTime.Now.AddMinutes(60),
                         signingCredentials: signinCredentials
                     );
                     var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
-                    return Ok(new AuthenticatedResponse { Token = tokenString });
+
+                    //search user id
+                    var userId = _repository.User.GetUserIdByEmail(loginDto.email);
+
+
+                    return Ok(new AuthenticatedResponse { Token = tokenString, IdUser = userId });
                 }
                 else
                 {
