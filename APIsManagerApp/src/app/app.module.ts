@@ -19,6 +19,7 @@ import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
 import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TwitterSettingsComponent } from './twitter/twitter-settings/twitter-settings.component';
+import { InfopanelTwtCredentialComponent } from './twitter/infopanel-twt-credential/infopanel-twt-credential.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -36,7 +37,8 @@ export function tokenGetter() {
     HeaderNavbarComponent,
     LeftNavbarComponent,
     DashboardComponent,
-    TwitterSettingsComponent
+    TwitterSettingsComponent,
+    InfopanelTwtCredentialComponent
   ],
   imports: [
     BrowserModule,

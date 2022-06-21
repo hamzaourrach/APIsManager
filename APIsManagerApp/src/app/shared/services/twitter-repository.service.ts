@@ -19,6 +19,10 @@ export class TwitterRepositoryService {
     return this.http.get<TwitterCredential>(this.createCompleteRoute(route, this.envUrl.urlAddress));
   }
 
+  public createCredential = (route: string, twtCredential: TwitterCredential) => {
+    return this.http.post<TwitterCredential>(this.createCompleteRoute(route, this.envUrl.urlAddress), twtCredential, this.generateHeaders());
+  }
+
   private createCompleteRoute = (route: string, envAddress: string) => {
     return `${envAddress}/${route}`;
   }

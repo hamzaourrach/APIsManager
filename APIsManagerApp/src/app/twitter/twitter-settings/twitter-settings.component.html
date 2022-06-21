@@ -1,54 +1,56 @@
-<div class="page-wrapper">
-  <div class="page-header card ">
-    <div class="row align-items-end outer-ellipsis">
-        <div class="col-lg-8 icon-list-demo">
-            <div class="page-header-title ">
-                <i class="ti-wand bg-c-blue"></i>
-                <div class="d-inline ">
-                    <h4>Twitter Settings</h4>
-                    <span class="outer-ellipsis">Configure your twitter API. <b>Setup Now</b></span>
+
+<div class="modal-content">
+  <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Panel Twitter Settings</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+      </button>
+  </div>
+  <form class="md-float-material" #addCredentialForm="ngForm" (ngSubmit)="AddCredential(addCredentialForm)">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div >
+                  <a href="#fakelink" class="btn btn-twitter"><i class="icofont icofont-social-twitter"></i>Twitter</a>
                 </div>
             </div>
-        </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="modal fade modal-icon show" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel">Themify Icons</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-              </button>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-12 text-center">
-                      <div class="icon-list-demo">
-                          <i id="icon" class="ti-arrow-up"></i>
-                      </div>
-                  </div>
-                  <div class="col-md-12">
-                      <div class="form-group">
-                          Name
-                          <input class="form-control" type="text" id="name" value="fa fa-wpbeginner">
-                      </div>
-                      <div class="form-group">
-                          Code
-                          <input class="form-control" type="text" id="code" value="<i class=&quot;fa fa-wpbeginner&quot;></i>">
-                      </div>
-                  </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    CONSUMER_KEY
+                    <input type="text" id="consumerkey" name="consumerkey" [(ngModel)]="twitterCredential.CONSUMER_KEY"
+                    class="form-control" required placeholder="Your Consumer Key">
+                    <span class="md-line"></span>
+                </div>
+                <div class="form-group">
+                    CONSUMER_SECRET
+                    <input type="text" id="consumersercret" name="consumersercret" [(ngModel)]="twitterCredential.CONSUMER_SECRET"
+                    class="form-control" required placeholder="Your Consumer Sercret">
+                    <span class="md-line"></span>
+                </div>
+                <div class="form-group">
+                  ACCESS_TOKEN
+                  <input type="text" id="accesstoken" name="accesstoken" [(ngModel)]="twitterCredential.ACCESS_TOKEN"
+                    class="form-control" required placeholder="Your Access Token">
+                    <span class="md-line"></span>
               </div>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+              <div class="form-group">
+                ACCESS_TOKEN_SECRET
+                <input type="text" id="accesstokensecret" name="accesstokensecret" [(ngModel)]="twitterCredential.ACCESS_TOKEN_SECRET"
+                    class="form-control" required placeholder="Your Access Token Secret">
+                    <span class="md-line"></span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary btn-outline-primary btn-block" type="submit" [disabled]="!addCredentialForm.valid">
+          <i class="ti-plus"></i>
+          Add Credential
+        </button>
+    </div>
 
-      </div>
-  </div>
+  </form>
 </div>
 
-<script type="text/javascript" src="./../../../assets/pages/icon-modal.js"></script>
+
+
